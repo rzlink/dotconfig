@@ -18,6 +18,8 @@
 			  smex
 			  swiper
 			  counsel
+			  smartparens
+			  js2-mode
 			  ) "Default packages")
 
 (setq package-selected-packages davwei/packages)
@@ -44,8 +46,16 @@
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+(require 'smartparens-config)
+(smartparens-global-mode t)
 
-;; config for swiper
+;; config for js2-mode
+(setq auto-mode-alist
+      (append
+       '(("\\.js\\'" . js2-mode))
+       auto-mode-alist))
+
+;; Config For swiper
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (global-set-key "\C-s" 'swiper)
@@ -71,13 +81,13 @@
 ;; open with full screen
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
 
-;; show match parents
-(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
-
 ;; highligh current line
 (global-hl-line-mode t)
 
-(load-theme 'monokai t)
+;; add delete section mode
+(delete-selection-mode t)
+
+
 
 (defun open-my-init-file()
   (interactive)
@@ -113,5 +123,4 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; add delete section mode
-(delete-selection-mode t)
+(load-theme 'monokai t)
