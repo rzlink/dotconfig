@@ -21,6 +21,7 @@
 			  smartparens
 			  js2-mode
 			  moe-theme
+			  popwin
 			  ) "Default packages")
 
 (setq package-selected-packages davwei/packages)
@@ -36,6 +37,11 @@
   (dolist (pkg davwei/packages)
     (when (not (package-installed-p pkg))
       (package-install pkg))))
+
+(global-auto-revert-mode t)
+;; disable auto-save and auto-backup
+(setq auto-save-default nil)
+(setq make-backup-files nil)
 
 ;; config for smex
 (require 'smex) ; Not needed if you use package.el
@@ -99,8 +105,10 @@
 (global-set-key (kbd "<f2>") 'open-my-init-file)
 
 (global-company-mode t)
-(setq cursor-type 'bar)
-(setq make-backup-files nil)
+(setq default-cursor-type 'bar)
+
+(require 'popwin)
+(popwin-mode t)
 
 (require 'org)
 (setq org-src-fontify-natively t)
