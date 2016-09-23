@@ -6,7 +6,7 @@
 (when (>= emacs-major-version 24)
   (require 'package)
   (package-initialize)
-  (add-to-list 'package-archives '("melpa" . "http://stable.melpa.org/packages/") t)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
   )
 
 (require 'cl)
@@ -20,6 +20,7 @@
 			  counsel
 			  smartparens
 			  js2-mode
+			  moe-theme
 			  ) "Default packages")
 
 (setq package-selected-packages davwei/packages)
@@ -48,6 +49,8 @@
 
 (require 'smartparens-config)
 (smartparens-global-mode t)
+
+(require 'moe-theme)
 
 ;; config for js2-mode
 (setq auto-mode-alist
@@ -114,8 +117,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("a800120841da457aa2f86b98fb9fd8df8ba682cebde033d7dbf8077c1b7d677a" default)))
-)
+    ("dbb643699e18b5691a8baff34c29d709a3ff9787f09cdae58d3c1bc085b63c25" "a800120841da457aa2f86b98fb9fd8df8ba682cebde033d7dbf8077c1b7d677a" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -123,4 +125,5 @@
  ;; If there is more than one, they won't work right.
  )
 
-(load-theme 'monokai t)
+;; (load-theme 'monokai t)
+(moe-light)
