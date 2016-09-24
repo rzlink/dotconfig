@@ -1,3 +1,7 @@
+;; left windows key to super
+;; (setq w32-pass-lwindow-to-system nil)
+;; (setq w32-lwindow-modifier 'super)
+
 (global-set-key "\C-s" 'swiper)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "M-x") 'counsel-M-x)
@@ -17,4 +21,10 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
+
+(global-set-key (kbd "s-/") 'hippie-expand)
+
+(with-eval-after-load 'dired
+  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
+
 (provide 'init-keybindings)
