@@ -21,6 +21,7 @@
 			  helm-ag
 			  auto-yasnippet
 			  evil
+			  evil-leader
 			  ) "Default packages")
 
 (setq package-selected-packages davwei/packages)
@@ -65,5 +66,6 @@
 (evil-mode 1)
 (setcdr evil-insert-state-map nil)
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
+(global-evil-leader-mode)
 
 (provide 'init-packages)
