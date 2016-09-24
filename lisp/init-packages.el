@@ -14,6 +14,7 @@
 			  js2-mode
 			  moe-theme
 			  popwin
+			  web-mode
 			  ) "Default packages")
 
 (setq package-selected-packages davwei/packages)
