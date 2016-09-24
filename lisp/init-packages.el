@@ -20,6 +20,7 @@
 			  org-pomodoro
 			  helm-ag
 			  auto-yasnippet
+			  evil
 			  ) "Default packages")
 
 (setq package-selected-packages davwei/packages)
@@ -60,5 +61,7 @@
 
 (require 'popwin)
 (popwin-mode t)
+
+(evil-mode 1)
 
 (provide 'init-packages)
