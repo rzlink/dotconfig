@@ -12,6 +12,13 @@
 (recentf-mode t)
 (setq recentf-max-menu-items 25)
 
+(define-advice show-paren-function (:around (fn) fix-showparen-function)
+  "Highlight enclosing parens."
+  (cond ((looking-at-p "\\s(") (function fn))
+	(t (save-excursion
+	     (ignore-errors (backward-up-list))
+	     (funcall fn)))))
+
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
 ;; add delete section mode
@@ -56,7 +63,20 @@
 ;; current subdir, instead of the current subdir of this dired buffer
 (put 'dired-find-alternate-file 'disabled nil)
 
+;; use C-x C-j to open current directory
 (require 'dired-x)
 (setq dired-dwim-target t)
+
+(defun hidden-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+(defun remove-dos-eol ()
+  "Replace DOS eolns CR LF with Unix eolns CR"
+  (interactive)
+  (goto-char (point-min))
+  (while (search-forward "\r" nil t) (replace-match "")))
 
 (provide 'init-better-defaults)

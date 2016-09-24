@@ -31,6 +31,7 @@
       (package-install pkg))))
 
 (smartparens-global-mode t)
+(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
 
 ;; Config For swiper
 (ivy-mode 1)
