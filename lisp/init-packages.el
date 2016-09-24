@@ -17,6 +17,7 @@
 			  web-mode
 			  expand-region
 			  iedit
+			  org-pomodoro
 			  ) "Default packages")
 
 (setq package-selected-packages davwei/packages)
