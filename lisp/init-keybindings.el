@@ -27,4 +27,6 @@
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 
+(global-set-key (kbd "M-s o") 'occur-dwim)
+
 (provide 'init-keybindings)

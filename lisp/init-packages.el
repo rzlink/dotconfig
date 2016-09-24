@@ -41,7 +41,8 @@
 ;; config for js2-mode
 (setq auto-mode-alist
       (append
-       '(("\\.js\\'" . js2-mode))
+       '(("\\.js\\'" . js2-mode)
+	 ("\\.html\\'" . web-mode))
        auto-mode-alist))
 
 (global-company-mode t)
