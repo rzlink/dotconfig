@@ -19,6 +19,7 @@
 			  iedit
 			  org-pomodoro
 			  helm-ag
+			  auto-yasnippet
 			  ) "Default packages")
 
 (setq package-selected-packages davwei/packages)
@@ -36,7 +37,8 @@
       (package-install pkg))))
 
 (smartparens-global-mode t)
-(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+(with-eval-after-load 'emacs-lisp-mode
+  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil))
 
 ;; Config For swiper
 (ivy-mode 1)
