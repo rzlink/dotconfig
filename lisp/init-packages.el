@@ -15,6 +15,8 @@
 			  moe-theme
 			  popwin
 			  web-mode
+			  expand-region
+			  iedit
 			  ) "Default packages")
 
 (setq package-selected-packages davwei/packages)
