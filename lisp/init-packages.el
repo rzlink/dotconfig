@@ -22,6 +22,10 @@
 			  auto-yasnippet
 			  evil
 			  evil-leader
+			  window-numbering
+			  evil-surround
+			  evil-nerd-commenter
+			  which-key
 			  ) "Default packages")
 
 (setq package-selected-packages davwei/packages)
@@ -68,4 +72,23 @@
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
 (global-evil-leader-mode)
 
+(evil-leader/set-key
+  "ff" 'find-file
+  "fr" 'recentf-open-files
+  "bb" 'switch-to-buffer
+  "bk" 'kill-buffer
+  "pf" 'counsel-git
+  "ps" 'helm-do-ag-project-root
+  "wl" 'split-window-right
+  "wb" 'split-window-below
+  ":" 'counsel-M-x)
+
+(window-numbering-mode 1)
+
+(require 'evil-surround)
+(global-evil-surround-mode 1)
+(evilnc-default-hotkeys)
+(define-key evil-normal-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
+(define-key evil-visual-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
+(which-key-mode)
 (provide 'init-packages)
