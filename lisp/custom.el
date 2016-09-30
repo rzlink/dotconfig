@@ -8,6 +8,7 @@
  '(custom-safe-themes
    (quote
     ("dbb643699e18b5691a8baff34c29d709a3ff9787f09cdae58d3c1bc085b63c25" "a800120841da457aa2f86b98fb9fd8df8ba682cebde033d7dbf8077c1b7d677a" default)))
+ '(evil-leader/leader "<SPC>")
  '(evil-want-C-u-scroll t)
  '(package-selected-packages
    (quote

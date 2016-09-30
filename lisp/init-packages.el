@@ -26,6 +26,7 @@
 			  evil-surround
 			  evil-nerd-commenter
 			  which-key
+			  slime
 			  ) "Default packages")
 
 (setq package-selected-packages davwei/packages)
@@ -91,4 +92,8 @@
 (define-key evil-normal-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
 (define-key evil-visual-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
 (which-key-mode)
+
+(setq inferior-lisp-program "sbcl")
+(setq slime-contribs '(slime-fancy))
+
 (provide 'init-packages)
